@@ -145,3 +145,20 @@ net_savings = cumulative_savings − one_time_implementation_cost
 payback_months = one_time_implementation_cost ÷ monthly_savings
 roi_percentage = (net_savings ÷ one_time_implementation_cost) × 100
 ```
+| Input                 | Value |
+| --------------------- | ----- |
+| Invoices per month    | 2000  |
+| Staff                 | 3     |
+| Avg hours per invoice | 0.17  |
+| Hourly wage           | $30   |
+| Error cost            | $100  |
+
+Output:
+Monthly savings: $8,200
+Payback period: 6.2 months
+ROI (36 months): ~400%
+
+👨‍💻 Author
+
+Kishore P.S.
+Built as part of a 3-hour product challenge.
