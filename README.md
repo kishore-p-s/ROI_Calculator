@@ -129,32 +129,27 @@ Copy code
 🧮 Calculation Logic
 1. Manual Labor Cost
 ```
-ini
 Copy code
 labor_cost_manual = num_ap_staff × hourly_wage × avg_hours_per_invoice × monthly_invoice_volume
 ```
 2. Automation Cost
 ```
-ini
 Copy code
 auto_cost = monthly_invoice_volume × automated_cost_per_invoice
 ```
 
 3. Error Savings
 ```
-ini
 Copy code
 error_savings = (error_rate_manual − error_rate_auto) × monthly_invoice_volume × error_cost
 ```
 4. Monthly Savings (with bias)
 ```
-ini
 Copy code
 monthly_savings = ((labor_cost_manual + error_savings) − auto_cost) × min_roi_boost_factor
 ```
 5. Cumulative ROI
 ```
-ini
 Copy code
 cumulative_savings = monthly_savings × time_horizon_months
 net_savings = cumulative_savings − one_time_implementation_cost
