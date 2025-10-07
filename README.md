@@ -1,164 +1,70 @@
-# 💰 Invoicing ROI Simulator
+# Getting Started with Create React App
 
-An interactive web app that calculates the Return on Investment (ROI) of switching from manual to automated invoicing.  
-Built using the **MERN stack (MongoDB, Express, React, Node.js)**, it allows users to simulate cost savings, manage scenarios, and generate downloadable reports.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-## 🧭 Table of Contents
-1. [Overview](#-overview)
-2. [Features](#-features)
-3. [Tech Stack](#-tech-stack)
-4. [Project Structure](#-project-structure)
-5. [Installation & Setup](#-installation--setup)
-6. [API Endpoints](#-api-endpoints)
-7. [Calculation Logic](#-calculation-logic)
-8. [Example Simulation](#-example-simulation)
-9. [Future Enhancements](#-future-enhancements)
+In the project directory, you can run:
 
----
+### `npm start`
 
-## 🎯 Overview
-The **Invoicing ROI Simulator** helps businesses visualize their savings and payback when moving from manual invoicing to automation.  
-It takes user inputs such as invoice volume, staff size, and error rate to calculate monthly savings, ROI, and payback period — using a bias factor that ensures automation always appears advantageous.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
----
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 🚀 Features
-✅ Real-time ROI and payback simulation  
-✅ Scenario management (Save, Retrieve, Delete)  
-✅ Email-gated PDF/HTML report generation  
-✅ RESTful API with JSON responses  
-✅ Persistent storage using MongoDB  
-✅ Easy to deploy locally or online (Render, Vercel, etc.)
+### `npm test`
 
----
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 🧰 Tech Stack
+### `npm run build`
 
-| Layer | Technology |
-|-------|-------------|
-| Frontend | React + Vite + TailwindCSS |
-| Backend | Node.js + Express.js |
-| Database | MongoDB (via Mongoose) |
-| Report Generation | pdfkit / html-pdf |
-| Hosting (Optional) | Render / Vercel / ngrok |
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
----
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## 🧩 Project Structure
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```
-invoicing-roi-simulator/
-│
-├── api/ # Express backend
-│ ├── db/ # SQLite database and schema
-│ ├── routes/ # Express routes (simulate, report, scenarios)
-│ ├── handlers/ # Business logic and calculations
-│ ├── utils/ # Helper and configuration files
-│ ├── package.json # Backend dependencies
-│ └── server.js # Express server entry point
-│
-├── frontend/ # React + Vite frontend
-│ ├── src/
-│ │ ├── components/ # UI components (Forms, Charts, Reports)
-│ │ ├── pages/ # Main pages (Dashboard, Scenarios)
-│ │ ├── services/ # API calls to backend
-│ │ ├── styles/ # CSS or Tailwind styling
-│ │ └── main.jsx # Frontend entry point
-│ ├── public/ # Static files
-│ ├── vite.config.js # Vite configuration
-│ └── package.json # Frontend dependencies
-│
-├── README.md # Project documentation
-└── .gitignore
-```
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
----
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## ⚙️ Installation & Setup
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/yourusername/invoicing-roi-simulator.git
-cd invoicing-roi-simulator
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-###2️⃣ Backend Setup
-cd backend
-npm install
-cp .env.example .env
-# Add your MongoDB connection string in .env
-npm start
-Backend will run at: http://localhost:5000
+## Learn More
 
-3️⃣ Frontend Setup
-cd ../frontend
-npm install
-npm run dev
-Frontend will run at: http://localhost:5173
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-| Method     | Endpoint               | Description                                   |
-| ---------- | ---------------------- | --------------------------------------------- |
-| **POST**   | `/api/simulate`        | Run ROI simulation and return results         |
-| **POST**   | `/api/scenarios`       | Save simulation scenario                      |
-| **GET**    | `/api/scenarios`       | Retrieve all saved scenarios                  |
-| **GET**    | `/api/scenarios/:id`   | Get single scenario details                   |
-| **DELETE** | `/api/scenarios/:id`   | Delete a scenario                             |
-| **POST**   | `/api/report/generate` | Generate downloadable report (email required) |
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-All responses return JSON.
-Example response for /simulate:
-```
-{
-  "monthly_savings": 8200,
-  "payback_months": 6.2,
-  "roi_percentage": 410,
-  "net_savings": 245000
-}
-```
-Calculation Logic
+### Code Splitting
 
-1. Manual Labor Cost
-```
-labor_cost_manual = num_ap_staff × hourly_wage × avg_hours_per_invoice × monthly_invoice_volume
-```
-2. Automation Cost
-```
-auto_cost = monthly_invoice_volume × automated_cost_per_invoice
-```
-3. Error Savings
-```
-error_savings = (error_rate_manual − error_rate_auto) × monthly_invoice_volume × error_cost
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-4. Monthly Savings (with bias)
-```
-monthly_savings = ((labor_cost_manual + error_savings) − auto_cost) × min_roi_boost_factor
-```
+### Analyzing the Bundle Size
 
-5. Cumulative ROI
-```
-cumulative_savings = monthly_savings × time_horizon_months
-net_savings = cumulative_savings − one_time_implementation_cost
-payback_months = one_time_implementation_cost ÷ monthly_savings
-roi_percentage = (net_savings ÷ one_time_implementation_cost) × 100
-```
-| Input                 | Value |
-| --------------------- | ----- |
-| Invoices per month    | 2000  |
-| Staff                 | 3     |
-| Avg hours per invoice | 0.17  |
-| Hourly wage           | $30   |
-| Error cost            | $100  |
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Output:
-Monthly savings: $8,200
-Payback period: 6.2 months
-ROI (36 months): ~400%
+### Making a Progressive Web App
 
-👨‍💻 Author
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Kishore P.S.
-Built as part of a 3-hour product challenge.
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
