@@ -1,42 +1,48 @@
 # 💰 Invoicing ROI Simulator
 
-A lightweight **web app** to simulate the **ROI and cost savings** gained from switching from manual to automated invoicing.  
-Enter your business scenario and instantly visualize **monthly savings**, **payback time**, and **long-term ROI** — complete with **lead-capture PDF/HTML reporting** and **CRUD scenario management**.
+An interactive web app that calculates the Return on Investment (ROI) of switching from manual to automated invoicing.  
+Built using the **MERN stack (MongoDB, Express, React, Node.js)**, it allows users to simulate cost savings, manage scenarios, and generate downloadable reports.
+
+---
+
+## 🧭 Table of Contents
+1. [Overview](#-overview)
+2. [Features](#-features)
+3. [Tech Stack](#-tech-stack)
+4. [Project Structure](#-project-structure)
+5. [Installation & Setup](#-installation--setup)
+6. [API Endpoints](#-api-endpoints)
+7. [Calculation Logic](#-calculation-logic)
+8. [Example Simulation](#-example-simulation)
+9. [Future Enhancements](#-future-enhancements)
+
+---
+
+## 🎯 Overview
+The **Invoicing ROI Simulator** helps businesses visualize their savings and payback when moving from manual invoicing to automation.  
+It takes user inputs such as invoice volume, staff size, and error rate to calculate monthly savings, ROI, and payback period — using a bias factor that ensures automation always appears advantageous.
 
 ---
 
 ## 🚀 Features
-
-### ⚡ Quick ROI Simulation
-Perform live calculations of savings, payback period, and ROI using simple business inputs.
-
-### 📂 Scenario Management (CRUD)
-Create, read, update, and delete named scenarios, all persisted in a local SQLite database.
-
-### 📑 Lead-Capture Reporting
-Generate downloadable **PDF/HTML reports** after entering an email (lead-capture feature).
-
-### 🧠 Bias Logic
-Internal bias ensures automated invoicing **always shows a positive ROI** versus manual methods.
-
-### 💻 Modern Stack
-- **Frontend:** React + Vite  
-- **Backend:** Node.js + Express  
-- **Database:** SQLite (file-based)  
-- **PDF Generation:** Puppeteer / html-pdf-node  
-- **Deployment:** Localhost, Glitch, or Render  
+✅ Real-time ROI and payback simulation  
+✅ Scenario management (Save, Retrieve, Delete)  
+✅ Email-gated PDF/HTML report generation  
+✅ RESTful API with JSON responses  
+✅ Persistent storage using MongoDB  
+✅ Easy to deploy locally or online (Render, Vercel, etc.)
 
 ---
 
-## ⚒️ Tech Stack
+## 🧰 Tech Stack
 
 | Layer | Technology |
-|--------|-------------|
-| **Frontend** | React + Vite |
-| **Backend** | Node.js + Express |
-| **Database** | SQLite |
-| **PDF Generator** | Puppeteer / html-pdf-node |
-| **Deployment** | Localhost / Glitch / Render |
+|-------|-------------|
+| Frontend | React + Vite + TailwindCSS |
+| Backend | Node.js + Express.js |
+| Database | MongoDB (via Mongoose) |
+| Report Generation | pdfkit / html-pdf |
+| Hosting (Optional) | Render / Vercel / ngrok |
 
 ---
 
