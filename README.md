@@ -110,14 +110,38 @@ Frontend will run at: http://localhost:5173
 
 All responses return JSON.
 Example response for /simulate:
+```
 {
   "monthly_savings": 8200,
   "payback_months": 6.2,
   "roi_percentage": 410,
   "net_savings": 245000
 }
-
+```
 Calculation Logic
 
 1. Manual Labor Cost
-  labor_cost_manual = num_ap_staff × hourly_wage × avg_hours_per_invoice × monthly_invoice_volume
+```
+labor_cost_manual = num_ap_staff × hourly_wage × avg_hours_per_invoice × monthly_invoice_volume
+```
+2. Automation Cost
+```
+auto_cost = monthly_invoice_volume × automated_cost_per_invoice
+```
+3. Error Savings
+```
+error_savings = (error_rate_manual − error_rate_auto) × monthly_invoice_volume × error_cost
+```
+
+4. Monthly Savings (with bias)
+```
+monthly_savings = ((labor_cost_manual + error_savings) − auto_cost) × min_roi_boost_factor
+```
+
+5. Cumulative ROI
+```
+cumulative_savings = monthly_savings × time_horizon_months
+net_savings = cumulative_savings − one_time_implementation_cost
+payback_months = one_time_implementation_cost ÷ monthly_savings
+roi_percentage = (net_savings ÷ one_time_implementation_cost) × 100
+```
