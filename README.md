@@ -73,3 +73,51 @@ invoicing-roi-simulator/
 ├── README.md # Project documentation
 └── .gitignore
 ```
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/invoicing-roi-simulator.git
+cd invoicing-roi-simulator
+```
+
+###2️⃣ Backend Setup
+cd backend
+npm install
+cp .env.example .env
+# Add your MongoDB connection string in .env
+npm start
+Backend will run at: http://localhost:5000
+
+3️⃣ Frontend Setup
+cd ../frontend
+npm install
+npm run dev
+Frontend will run at: http://localhost:5173
+
+| Method     | Endpoint               | Description                                   |
+| ---------- | ---------------------- | --------------------------------------------- |
+| **POST**   | `/api/simulate`        | Run ROI simulation and return results         |
+| **POST**   | `/api/scenarios`       | Save simulation scenario                      |
+| **GET**    | `/api/scenarios`       | Retrieve all saved scenarios                  |
+| **GET**    | `/api/scenarios/:id`   | Get single scenario details                   |
+| **DELETE** | `/api/scenarios/:id`   | Delete a scenario                             |
+| **POST**   | `/api/report/generate` | Generate downloadable report (email required) |
+
+All responses return JSON.
+Example response for /simulate:
+{
+  "monthly_savings": 8200,
+  "payback_months": 6.2,
+  "roi_percentage": 410,
+  "net_savings": 245000
+}
+
+Calculation Logic
+
+1. Manual Labor Cost
+  labor_cost_manual = num_ap_staff × hourly_wage × avg_hours_per_invoice × monthly_invoice_volume
