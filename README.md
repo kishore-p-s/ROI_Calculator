@@ -30,13 +30,13 @@ Internal bias ensures automated invoicing **always shows a positive ROI** versus
 
 ## ⚒️ Tech Stack
 
-| Layer - Technology |
+| Layer | Technology |
 |--------|-------------|
-| **Frontend** - React + Vite |
-| **Backend** - Node.js + Express |
-| **Database** - SQLite |
-| **PDF Generator** - Puppeteer / html-pdf-node |
-| **Deployment** - Localhost / Glitch / Render |
+| **Frontend** | React + Vite |
+| **Backend** | Node.js + Express |
+| **Database** | SQLite |
+| **PDF Generator** | Puppeteer / html-pdf-node |
+| **Deployment** | Localhost / Glitch / Render |
 
 ---
 
