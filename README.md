@@ -42,6 +42,7 @@ Internal bias ensures automated invoicing **always shows a positive ROI** versus
 
 ## 🧩 Project Structure
 
+```
 invoicing-roi-simulator/
 │
 ├── api/ # Express backend
@@ -65,5 +66,4 @@ invoicing-roi-simulator/
 │
 ├── README.md # Project documentation
 └── .gitignore
-
-
+```
