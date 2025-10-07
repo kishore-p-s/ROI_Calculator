@@ -43,26 +43,12 @@ Internal bias ensures automated invoicing **always shows a positive ROI** versus
 ## 🧩 Project Structure
 
 invoicing-roi-simulator/
-│
-├── api/ # Express backend
-│ ├── db/ # SQLite database and schema
-│ ├── routes/ # Express routes (simulate, report, scenarios)
-│ ├── handlers/ # Business logic and calculations
-│ ├── utils/ # Helper and configuration files
-│ ├── package.json # Backend dependencies
-│ └── server.js # Express server entry point
-│
-├── frontend/ # React + Vite frontend
-│ ├── src/
-│ │ ├── components/ # UI components (Forms, Charts, Reports)
-│ │ ├── pages/ # Main pages (Dashboard, Scenarios)
-│ │ ├── services/ # API calls to backend
-│ │ ├── styles/ # CSS or Tailwind styling
-│ │ └── main.jsx # Frontend entry point
-│ ├── public/ # Static files
-│ ├── vite.config.js # Vite configuration
-│ └── package.json # Frontend dependencies
-│
-├── README.md # Project documentation
-└── .gitignore
+├── api/
+│   ├── routes/
+│   └── server.js
+├── frontend/
+│   ├── src/
+│   └── vite.config.js
+└── README.md
+
 
